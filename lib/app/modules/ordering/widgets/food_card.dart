@@ -14,6 +14,8 @@ class FoodCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final CartController cartController = Get.find();
     return Container(
+      constraints: BoxConstraints(minWidth: 0.10.w(context)),
+
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(0.015.toresponsive(context)),
@@ -70,7 +72,7 @@ class FoodCard extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.blue[900],
                           fontWeight: FontWeight.w900,
-                          fontSize: 0.020.toresponsive(context),
+                          fontSize: 0.025.toresponsive(context),
                         ),
                       ),
                       SizedBox(height: 0.01.h(context)),
@@ -100,6 +102,11 @@ class FoodCard extends StatelessWidget {
                                 ),
                               )
                             : Container(
+                                constraints: BoxConstraints(
+                                  // maxWidth: 0.5.w(context),
+                                  minWidth: 0.10.w(context),
+                                ),
+
                                 decoration: BoxDecoration(
                                   color: Colors.blue[900],
                                   borderRadius: BorderRadius.circular(
@@ -112,20 +119,24 @@ class FoodCard extends StatelessWidget {
                                       icon: Icon(
                                         Icons.remove,
                                         color: Colors.white,
-                                        size: 0.016.toresponsive(context),
+                                        size: 0.025.toresponsive(context),
                                       ),
                                       onPressed: () =>
                                           cartController.decrement(foodData),
                                     ),
                                     Text(
                                       "${foodData.quantity.value}",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 0.025.toresponsive(context),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                     IconButton(
                                       icon: Icon(
                                         Icons.add,
                                         color: Colors.white,
-                                        size: 0.016.toresponsive(context),
+                                        size: 0.025.toresponsive(context),
                                       ),
                                       onPressed: () =>
                                           cartController.increment(foodData),

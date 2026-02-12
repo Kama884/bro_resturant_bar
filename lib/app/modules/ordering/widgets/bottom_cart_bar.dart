@@ -1,4 +1,5 @@
 import 'package:bro_resturant_bar/app/modules/ordering/controller/cart_controller.dart';
+import 'package:bro_resturant_bar/app/routes/app_routes.dart';
 import 'package:bro_resturant_bar/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,8 +60,13 @@ class BottomCartBar extends StatelessWidget {
                 ),
 
                 ElevatedButton(
-                  onPressed: () => Get.toNamed('/view-order'),
-                  child: Text("View Order"),
+                  onPressed: () {
+                    Get.toNamed(Routes.ORDER_INFO);
+                  },
+                  child: Text(
+                    "View Order",
+                    style: TextStyle(color: Colors.blue[900]),
+                  ),
                 ),
               ],
               //SizedBox(height: 0.030.h(context))

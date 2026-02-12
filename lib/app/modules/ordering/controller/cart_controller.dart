@@ -34,4 +34,9 @@ class CartController extends GetxController {
       cartItems.refresh();
     }
   }
+
+  double get Total => totalPrice;
+  double get ServiceTax => totalPrice * 0.05;
+  double get Vat => (totalPrice + ServiceTax) * 0.13;
+  double get GrandTotal => totalPrice + ServiceTax + Vat;
 }

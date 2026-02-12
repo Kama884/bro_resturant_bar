@@ -6,4 +6,5 @@ abstract class Routes {
   static const HOME_SCREEN = '/home_screen';
   static const MAIN_WRAPPER = '/main_wrapper';
   static const FOOD_SCREEN = '/food_screen';
+  static const ORDER_INFO = '/order_info';
 }

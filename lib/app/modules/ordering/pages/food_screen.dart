@@ -163,10 +163,7 @@ class foodScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCategorizedFoodList(
-    List<Foodmodel> displayList,
-    BuildContext context,
-  ) {
+  _buildCategorizedFoodList(List<Foodmodel> displayList, BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: 0.016.toresponsive(context),

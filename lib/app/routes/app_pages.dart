@@ -4,6 +4,7 @@ import 'package:bro_resturant_bar/app/modules/auth/widgets/otp_popup.dart';
 import 'package:bro_resturant_bar/app/modules/dashboard/pages/home_screen.dart';
 import 'package:bro_resturant_bar/app/modules/dashboard/pages/main_wrapper.dart';
 import 'package:bro_resturant_bar/app/modules/ordering/pages/food_screen.dart';
+import 'package:bro_resturant_bar/app/modules/ordering/pages/order_info.dart';
 import 'package:bro_resturant_bar/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 
@@ -15,5 +16,6 @@ class AppPages {
     GetPage(name: Routes.HOME_SCREEN, page: () => HomeScreen()),
     GetPage(name: Routes.MAIN_WRAPPER, page: () => MainWrapper()),
     GetPage(name: Routes.FOOD_SCREEN, page: () => foodScreen()),
+    GetPage(name: Routes.ORDER_INFO, page: () => OrderInfo()),
   ];
 }

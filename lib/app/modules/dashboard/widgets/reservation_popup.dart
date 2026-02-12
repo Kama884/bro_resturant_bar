@@ -33,7 +33,7 @@ class ReservationPopup extends StatelessWidget {
       child: Container(
         padding: EdgeInsetsGeometry.symmetric(
           horizontal: 0.035.w(context),
-          vertical: 0.020.h(context),
+          vertical: 0.015.h(context),
         ),
         decoration: BoxDecoration(
           color: Colors.white,
