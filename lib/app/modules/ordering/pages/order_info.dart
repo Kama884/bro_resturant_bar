@@ -1,4 +1,5 @@
 import 'package:bro_resturant_bar/app/modules/ordering/controller/cart_controller.dart';
+import 'package:bro_resturant_bar/app/routes/app_routes.dart';
 import 'package:bro_resturant_bar/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -122,6 +123,7 @@ class OrderInfo extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 /* Send POST request here */
+                Get.toNamed(Routes.CONFIRM_ORDER_PAGE);
               },
               child: Text(
                 "Confirm Order",
@@ -222,62 +224,68 @@ _buildOrderBill(CartController controller, BuildContext context) {
             //backgroundColor: Colors.blue[900],
           ),
         ),
-        Column(
-          //mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            SizedBox(height: 0.01.h(context)),
-            Row(
-              children: [
-                Text(
-                  "Total",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 0.024.toresponsive(context),
+        Expanded(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
+
+            children: [
+              SizedBox(height: 0.01.h(context)),
+              Row(
+                children: [
+                  Text(
+                    "Total",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 0.024.toresponsive(context),
+                    ),
                   ),
-                ),
-                SizedBox(width: 0.025.w(context)),
-                Text(
-                  "Rs ${controller.Total}",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 0.024.toresponsive(context),
+                  SizedBox(width: 0.025.w(context)),
+                  Text(
+                    "Rs ${controller.Total}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 0.024.toresponsive(context),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 0.01.h(context)),
-            Row(
-              children: [
-                Text("Service Tax", style: TextStyle(color: Colors.grey[600])),
-                SizedBox(width: 0.067.w(context)),
-                Text(
-                  "Rs ${controller.ServiceTax.toStringAsFixed(1)}",
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-              ],
-            ),
-            SizedBox(height: 0.01.h(context)),
-            Row(
-              children: [
-                Text("Vat 13%", style: TextStyle(color: Colors.grey[600])),
-                SizedBox(width: 0.067.w(context)),
-                Text(
-                  "Rs ${controller.Vat.toStringAsFixed(1)}",
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-              ],
-            ),
-            SizedBox(height: 0.02.h(context)),
-            Text(
-              "Grand Total   Rs ${controller.GrandTotal}",
-              style: TextStyle(
-                fontSize: 0.024.toresponsive(context),
-                fontWeight: FontWeight.bold,
-                color: Colors.blue[900],
+                ],
               ),
-            ),
-          ],
+              SizedBox(height: 0.01.h(context)),
+              Row(
+                children: [
+                  Text(
+                    "Service Tax",
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                  SizedBox(width: 0.067.w(context)),
+                  Text(
+                    "Rs ${controller.ServiceTax.toStringAsFixed(1)}",
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                ],
+              ),
+              SizedBox(height: 0.01.h(context)),
+              Row(
+                children: [
+                  Text("Vat 13%", style: TextStyle(color: Colors.grey[600])),
+                  SizedBox(width: 0.067.w(context)),
+                  Text(
+                    "Rs ${controller.Vat.toStringAsFixed(1)}",
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                ],
+              ),
+              SizedBox(height: 0.02.h(context)),
+              Text(
+                "Grand Total   Rs ${controller.GrandTotal.toStringAsFixed(1)}",
+                style: TextStyle(
+                  fontSize: 0.024.toresponsive(context),
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[900],
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     ),

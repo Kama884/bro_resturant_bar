@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
 
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: 0.050.h(context)),
                 SizedBox(
                   height: 0.200.h(context),
                   width: 0.400.w(context),
@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 50),
+                SizedBox(height: 0.050.h(context)),
 
                 Text(
                   'Welcome Back',

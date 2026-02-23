@@ -24,6 +24,7 @@ class TableCard extends StatelessWidget {
           onTap: () {
             Get.bottomSheet(
               ReservationPopup(tableData: tableData, categoryIndex: index),
+              // isScrollControlled: true,
             );
           },
           child: Card(

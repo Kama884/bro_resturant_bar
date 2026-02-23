@@ -1,5 +1,7 @@
 import 'package:bro_resturant_bar/app/modules/dashboard/controller/navigation_controller.dart';
 import 'package:bro_resturant_bar/app/modules/dashboard/pages/home_screen.dart';
+import 'package:bro_resturant_bar/app/modules/ordering/pages/order_page.dart';
+import 'package:bro_resturant_bar/app/modules/profile/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,9 +15,10 @@ class MainWrapper extends StatelessWidget {
 
     final List<Widget> screens = [
       const HomeScreen(),
-      const Center(child: Text("Order Page")),
+      OrderPage(),
+
       const Center(child: Text("Message Page")),
-      const Center(child: Text("Profile Page")),
+      ProfilePage(),
     ];
 
     return Scaffold(

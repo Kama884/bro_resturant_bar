@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       // backgroundColor: Colors.white,
       // elevation: 0,
-      // automaticallyImplyLeading: false,
+      automaticallyImplyLeading: false,
       toolbarHeight: 0.70.h(context),
       title: Row(
         children: [
